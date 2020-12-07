@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     changeTitle() {
-      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
       this.movie.title = 'Changed movie title'
     }
   }
