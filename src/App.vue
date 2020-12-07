@@ -20,6 +20,7 @@ export default {
         picture:
           "https://see-mag.fr/wp-content/uploads/2020/06/THE_INVISIBLE_MAN_POSTER_SEE.jpg",
         release: "2020-02-28",
+        isNew: true
       },
     };
   },

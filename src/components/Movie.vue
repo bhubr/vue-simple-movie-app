@@ -1,5 +1,7 @@
 <template>
   <div class="Movie">
+    <div class="Movie-new" v-if="movie.isNew">New</div>
+    <!-- if we wanted an alternative <div v-else>OLD</div> -->
     <img v-bind:src="movie.picture" v-bind:alt="movie.title" />
     <h3>{{ movie.title }}</h3>
     <span>&#9733;</span>
@@ -22,6 +24,19 @@ export default {
   align-items: center;
   overflow: hidden;
   margin-bottom: 1em;
+}
+
+.Movie-new {
+  background: #e43;
+  position: absolute;
+  font-size: 11px;
+  padding: 0 1.5em;
+  top: 5px;
+  left: -15px;
+  text-align: center;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 img {
