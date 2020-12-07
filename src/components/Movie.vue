@@ -1,10 +1,12 @@
 <template>
   <div class="Movie">
     <div class="Movie-new" v-if="isNew">New</div>
-    <!-- if we wanted an alternative <div v-else>OLD</div> -->
     <img :src="movie.picture" :alt="movie.title" />
     <h3 @click="changeTitle">{{ movie.title }}</h3>
-    <span>&#9733;</span>
+    <button type="button" @click="toggleFavorite">
+      <span v-if="isFavorite">&#9733;</span>
+      <span v-else>&#9734;</span>
+    </button>
   </div>
 </template>
 
@@ -16,6 +18,11 @@ export default {
   props: {
     movie: Object
   },
+  data(){
+    return {
+      isFavorite: false
+    }
+  },
   computed: {
     isNew() {
       const { release } = this.movie;
@@ -25,6 +32,9 @@ export default {
   methods: {
     changeTitle() {
       this.movie.title = 'Changed movie title'
+    },
+    toggleFavorite() {
+      this.isFavorite = !this.isFavorite
     }
   }
 }
@@ -59,5 +69,13 @@ img {
 
 h3 {
   flex-grow: 1;
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+button:focus {
+  outline: 1px solid #ccf;
 }
 </style>
