@@ -1,18 +1,32 @@
 <template>
   <div class="Movie">
-    <div class="Movie-new" v-if="movie.isNew">New</div>
+    <div class="Movie-new" v-if="isNew">New</div>
     <!-- if we wanted an alternative <div v-else>OLD</div> -->
     <img v-bind:src="movie.picture" v-bind:alt="movie.title" />
-    <h3>{{ movie.title }}</h3>
+    <h3 v-on:click="changeTitle">{{ movie.title }}</h3>
     <span>&#9733;</span>
   </div>
 </template>
 
 <script>
+import isLessThanOneYear from '../helpers/isLessThanOneYear'
+
 export default {
   name: 'Movie',
   props: {
     movie: Object
+  },
+  computed: {
+    isNew() {
+      const { release } = this.movie;
+      return isLessThanOneYear(release);
+    }
+  },
+  methods: {
+    changeTitle() {
+      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+      this.movie.title = 'Changed movie title'
+    }
   }
 }
 </script>
