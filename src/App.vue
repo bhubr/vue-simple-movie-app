@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <!-- <Movie v-bind:movie="movie" /> -->
-    <movie-list v-bind:movies="movies" />
+    <movie-list :movies="movies" />
   </div>
 </template>
 

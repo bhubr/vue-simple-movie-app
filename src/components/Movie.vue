@@ -2,8 +2,8 @@
   <div class="Movie">
     <div class="Movie-new" v-if="isNew">New</div>
     <!-- if we wanted an alternative <div v-else>OLD</div> -->
-    <img v-bind:src="movie.picture" v-bind:alt="movie.title" />
-    <h3 v-on:click="changeTitle">{{ movie.title }}</h3>
+    <img :src="movie.picture" :alt="movie.title" />
+    <h3 @click="changeTitle">{{ movie.title }}</h3>
     <span>&#9733;</span>
   </div>
 </template>

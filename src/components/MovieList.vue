@@ -1,6 +1,6 @@
 <template>
   <div>
-    <movie v-bind:movie="movie" v-bind:key="movie.id" v-for="movie in movies" />
+    <movie :movie="movie" :key="movie.id" v-for="movie in movies" />
   </div>
 </template>
 
@@ -14,6 +14,9 @@ export default {
   },
   props: {
     movies: Array
+  },
+  computed: {
+
   }
 }
 </script>
