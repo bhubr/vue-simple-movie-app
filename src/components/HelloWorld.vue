@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Hello {{ name }}</h2>
-    <button type="button" v-on:click="name = 'Toto'">Change name</button>
+    <button type="button" v-on:click="changeName">Change name</button>
   </div>
 </template>
 
@@ -18,6 +18,11 @@ export default {
     // otherwise they won't update
     return {
       name: 'John'
+    }
+  },
+  methods: {
+    changeName() {
+      this.name = 'Toto';
     }
   }
 }
