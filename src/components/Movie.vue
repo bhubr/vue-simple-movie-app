@@ -1,14 +1,17 @@
 <template>
   <div class="Movie">
-    <img src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg" alt="" />
-    <h3>Inception</h3>
+    <img v-bind:src="movie.picture" v-bind:alt="movie.title" />
+    <h3>{{ movie.title }}</h3>
     <span>&#9733;</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Movie'
+  name: 'Movie',
+  props: {
+    movie: Object
+  }
 }
 </script>
 

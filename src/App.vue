@@ -1,18 +1,29 @@
 <template>
   <div id="app">
-    <Movie />
+    <Movie v-bind:movie="movie" />
   </div>
 </template>
 
 <script>
-import Movie from './components/Movie'
+import Movie from "./components/Movie";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Movie
-  }
-}
+    Movie,
+  },
+  data() {
+    return {
+      movie: {
+        id: 1,
+        title: "The Invisible Man",
+        picture:
+          "https://see-mag.fr/wp-content/uploads/2020/06/THE_INVISIBLE_MAN_POSTER_SEE.jpg",
+        release: "2020-02-28",
+      },
+    };
+  },
+};
 </script>
 
 <style>
